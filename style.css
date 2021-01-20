@@ -51,6 +51,7 @@ h1 {
 .tracker {
     width: 286px;
     height: 40px;
+    border-radius: 10px;
     display: flex;
     flex-direction: row;
 }
@@ -64,6 +65,8 @@ h1 {
 }
 .group56 {
     margin: 9px 10px;
+    box-sizing: border-box;
+    border-radius: 71px;
 }
 .button {
     margin: 18px auto;
