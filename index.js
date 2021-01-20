@@ -59,6 +59,7 @@ trackers.forEach((item) => {
         evt.target.style.backgroundColor = '#FFDC40';
         // textInputs.style.backgroundColor = '#FFDC40'
         dragElement = evt.target;
+        //item.style.backgroundColor = '#E4E4E4'
     })
 
     item.addEventListener('dragend', (evt) => {
@@ -84,6 +85,7 @@ track.addEventListener('dragleave', (evt) => {
 })
 
 track.addEventListener('drop', (evt) => {
-    track.append(dragElement);
-    // track.insertBefore(dragElement, referenceElement);
+//    track.append(dragElement);
+   console.log(evt.target)
+   track.insertBefore(dragElement, evt.target.parentElement);
 })
