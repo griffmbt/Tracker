@@ -36,4 +36,69 @@ h1 {
     display: flex;
     justify-content: flex-end;
     margin-right: 30px;
+    margin-bottom: 12px;
+}
+
+.tracker {
+    width: 286px;
+    height: 40px;
+    margin-left: 28px;
+    margin-bottom: 16px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.text-input {
+    width: 196px;
+}
+
+.group36 {
+    margin: 10px 15px;
+}
+.group56 {
+    margin: 9px 10px;
+}
+.button {
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 150px;
+    height: 42px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.button__plus {
+    width: 42px;
+    height: 42px;
+    padding: auto;
+    background: #9953F1;
+    border-radius: 71px;
+    margin-right: -42px;
+    text-align: center;
+    color: white;
+    
+}
+
+.button__add {
+    width: 150px;
+    height: 42px;
+    background: #833AE0;
+    border-radius: 71px;
+    text-align: center;
+    color: white;
+}
+
+.button__add-p, .button__plus-p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.button__add-p {
+    padding-left: 20px;
 }
