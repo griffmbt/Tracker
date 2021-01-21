@@ -15,7 +15,9 @@ function addTrack() {
     });
 
     const buttonDelete = document.querySelectorAll('.group56')
+
     buttonDelete.forEach((item) => {
+        console.log(item)
         item.addEventListener('mouseover', (event) => {
             event.target.style.backgroundColor = '#833AE0';
         });
@@ -39,8 +41,8 @@ const track = document.querySelector('.track');
 const tracker = document.querySelector('.tracker');
 const trackers = document.querySelectorAll('.tracker');
 
-const textInputs = document.querySelectorAll('.text-input')
-const buttonDelete = document.querySelector('.group56')
+const textInputs = document.querySelectorAll('.text-input');
+const buttonDelete = document.querySelector('.group56');
 let dragElement;
 
 button.addEventListener('click', addTrack);
@@ -57,9 +59,7 @@ buttonDelete.addEventListener('mouseout', (event) => {
 trackers.forEach((item) => {
     item.addEventListener('dragstart', (evt) => {
         evt.target.style.backgroundColor = '#FFDC40';
-        // textInputs.style.backgroundColor = '#FFDC40'
         dragElement = evt.target;
-        //item.style.backgroundColor = '#E4E4E4'
     })
 
     item.addEventListener('dragend', (evt) => {
@@ -71,9 +71,8 @@ trackers.forEach((item) => {
 
 
 track.addEventListener('dragenter', (evt) => {
+    evt.target.parentElement.style['border-bottom'] = 'solid 3px blueviolet';
     evt.preventDefault();
-    //evt.target.style.backgroundColor = '833AE0';
-    //track.append(dragElement);
 })
 
 track.addEventListener('dragover', (evt) => {
@@ -81,11 +80,11 @@ track.addEventListener('dragover', (evt) => {
 })
 
 track.addEventListener('dragleave', (evt) => {
-    evt.target.style.backgroundColor = 'white';
+    evt.target.parentElement.style['border-bottom'] = '';
+    evt.target.style.backgroundColor = 'unset';
 })
 
 track.addEventListener('drop', (evt) => {
-//    track.append(dragElement);
-   console.log(evt.target)
+    evt.target.parentElement.style['border-bottom'] = '';
    track.insertBefore(dragElement, evt.target.parentElement);
 })
