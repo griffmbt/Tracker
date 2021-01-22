@@ -35,16 +35,41 @@ function addTrack() {
             let x = a.value;
             let y = b.value;
 
-            return x - y;
-        })
+            if(x > y) {
+                return 1;
+            } else if (x < y) {
+                return -1;
+            }
+            
+        });
+        
+        for (let i = 0; i < trackers.length; i++) {
+           trackers[i].insertBefore(sorted[i], trackers[i].children[1])
+        };
+        
+        return sorted;
+
+    }
+
+    function showSortingDecreasing(textInputs) {
+        let sorted = Array.from(textInputs).sort((a, b) => {
+            let x = a.value;
+            let y = b.value;
+
+            if(x > y) {
+                return -1;
+            } else if (x < y) {
+                return 1;
+            }
+            
+        });
         
         for (let i = 0; i < trackers.length; i++) {
            trackers[i].insertBefore(sorted[i], trackers[i].children[1])
         }
         
         return sorted;
-        
-    }
+    };
 
     const textInputs = document.querySelectorAll('.text-input');
    
@@ -58,7 +83,7 @@ function addTrack() {
             showSortingIncreasing(textInputs);
         } else if (sortButtonTrecker != '1') {
             sortButton.src = 'img/Group34.svg';
-            //showSortingDecreasing();
+            showSortingDecreasing(textInputs);
             sortButtonTrecker = '1'
         }
     });
