@@ -6,10 +6,7 @@ body {
 
 .container {
     margin: 10% auto;
-    /* height: 50vh;
-    width: 50vh; */
     width: 336px;
-  
     box-sizing: border-box;
     border: 1px solid #C4C4C4;
     border-radius: 10px;
@@ -33,10 +30,19 @@ h1 {
 }
 
 .group34 {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
+    margin-left: 287px;
     margin-bottom: 12px;
+    width: 25px;
+    height: 15px;
+    pointer-events: none;
+} 
+
+.group34-button {
+    border: none;
+    background-color: white;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 .track {
