@@ -49,6 +49,7 @@ function addTrack() {
 
 
     track.append(tracker.cloneNode(true));
+
     const trackers = document.querySelectorAll('.tracker');
     const buttonDelete = document.querySelectorAll('.group56');
     const group36 = document.querySelector('.group36');
@@ -113,12 +114,15 @@ function addTrack() {
     
         if (sortButtonTrecker != '2'){
             sortButton.src = 'img/Group34-blackUP.png';
+            showSortingIncreasing();
+
             sortButtonTrecker = '2';
             checkSortButton = '2';
-            showSortingIncreasing();
+            
         } else if (sortButtonTrecker != '1') {
             sortButton.src = 'img/Group34-2.png';
             showSortingDecreasing();
+
             sortButtonTrecker = '1';
             checkSortButton = '1';
         }
@@ -185,9 +189,6 @@ track.addEventListener('drop', (evt) => {
     evt.target.parentElement.style['border-bottom'] = '';
     track.insertBefore(dragElement, evt.target.parentElement);
 })
-
-
-
 
 
 sortButtonUP.addEventListener('mouseover', (event) => {
