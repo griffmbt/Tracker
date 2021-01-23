@@ -66,12 +66,14 @@ h1 {
     width: 196px;
     outline: none;
     border: none;
+    background-color: unset;
 }
 
 .group36 {
     margin: 14px 15px;
     width: 12px;
     height: 12px;
+
 }
 .group56 {
     margin: 10px 10px;
