@@ -77,15 +77,18 @@ function addTrack() {
     })
 
     trackers.forEach((item) => {
-        item.addEventListener('dragstart', (evt) => {
+        item.addEventListener('dragstart', () => {
            item.style.backgroundColor = '#FFDC40';
             dragElement = item;
         });
-    
-        item.addEventListener('dragend', (evt) => {
+        item.addEventListener('dragend', () => {
            item.style.backgroundColor = 'unset';
             dragElement = null;
         });
+
+        item.addEventListener('drag', () => {
+            item.style.backgroundColor = '#E4E4E4';
+        })
     });
 
     buttonDelete.forEach((item) => {
@@ -127,8 +130,7 @@ function addTrack() {
             checkSortButton = '1';
         }
     });
-   
-}
+};
 
 
 const button = document.querySelector('.button');
@@ -141,8 +143,8 @@ const textInputs = document.querySelectorAll('.text-input');
 
 const buttonDelete = document.querySelector('.group56');
 
-const sortButton = document.querySelector('.group34')
-const sortButtonUP = document.querySelector('.group34-button')
+const sortButton = document.querySelector('.group34');
+const sortButtonUP = document.querySelector('.group34-button');
 let dragElement;
 let checkSortButton = '1';
 
@@ -160,35 +162,39 @@ buttonDelete.addEventListener('click', () => {
 });
 
 trackers.forEach((item) => {
-    item.addEventListener('dragstart', (evt) => {
+    item.addEventListener('dragstart', () => {
         item.style.backgroundColor = '#FFDC40';
         dragElement = item;
-    })
+    });
 
-    item.addEventListener('dragend', (evt) => {
+    item.addEventListener('dragend', () => {
         item.style.backgroundColor = 'unset';
         dragElement = null;
-    })
+    });
+
+    item.addEventListener('drag', () => {
+        item.style.backgroundColor = '#E4E4E4';
+    });
 });
 
 track.addEventListener('dragenter', (evt) => {
     evt.target.parentElement.style['border-bottom'] = 'solid 3px blueviolet';
     evt.preventDefault();
-})
+});
 
 track.addEventListener('dragover', (evt) => {
     evt.preventDefault();
-})
+});
 
 track.addEventListener('dragleave', (evt) => {
     evt.target.parentElement.style['border-bottom'] = '';
     evt.target.style.backgroundColor = 'unset';
-})
+});
 
 track.addEventListener('drop', (evt) => {
     evt.target.parentElement.style['border-bottom'] = '';
     track.insertBefore(dragElement, evt.target.parentElement);
-})
+});
 
 
 sortButtonUP.addEventListener('mouseover', (event) => {
