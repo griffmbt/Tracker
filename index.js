@@ -48,7 +48,8 @@ function addTrack() {
     };
 
     let newClone = tracker.cloneNode(true)
-    let newTrack = track.append(newClone);
+    newClone.children[1].value ='';
+    track.append(newClone);
 
     const trackers = document.querySelectorAll('.tracker');
     const buttonDelete = document.querySelectorAll('.group56');
