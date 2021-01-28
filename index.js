@@ -47,14 +47,15 @@ function addTrack() {
         return sorted;
     };
 
-
-    track.append(tracker.cloneNode(true));
+    let newClone = tracker.cloneNode(true)
+    let newTrack = track.append(newClone);
 
     const trackers = document.querySelectorAll('.tracker');
     const buttonDelete = document.querySelectorAll('.group56');
     const group36 = document.querySelector('.group36');
     const textInputs = document.querySelectorAll('.text-input');
     const sortButton = document.querySelector('.group34');
+    const fourDot = newClone.querySelector('.group36')
     let sortButtonTrecker;
 
     track.addEventListener('dragenter', (evt) => {
@@ -74,6 +75,7 @@ function addTrack() {
     track.addEventListener('drop', (evt) => {
         evt.target.parentElement.style['border-bottom'] = '';
         track.insertBefore(dragElement, evt.target.parentElement);
+        dragElement.draggable = false;
     })
 
     trackers.forEach((item) => {
@@ -103,13 +105,8 @@ function addTrack() {
         });
     });
     
-    tracker.addEventListener('mousedown', (evt) => {
-        
-        if(evt.target === group36) {
-            evt.target.draggable = true;
-        } else {
-            evt.target.draggable = false;
-        };
+    fourDot.addEventListener('mousedown', (evt) => {
+        newClone.draggable = true;
     });
 
     sortButtonUP.addEventListener('click', () => {
